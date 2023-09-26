@@ -1,0 +1,21 @@
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 200px;
+  padding: 50px;
+  margin-top: 100px;
+  align-items: center;
+  box-shadow: grey 0 5px 10px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+}
