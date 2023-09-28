@@ -12,7 +12,10 @@ export default function Navbar({ user, setToken, setUser }) {
   return (
     <div className="navbar-container">
       <Link to={"/"}>Home</Link>
-      <Link to={"/subreddits"}>Subreddits</Link>
+      {/* <Link to={"/newSubreddits"}>New Subreddits</Link>
+      <Link to={"/newPosts"}>New Posts</Link> */}
+      {/* <Link to={"/editPosts/:postId"}>Edit Post</Link> */}
+      {/* <Link to={"/subreddit"}>Subreddit</Link> */}
       {!user.id && (
         <>
           <Link to={"/login"}>Login</Link>

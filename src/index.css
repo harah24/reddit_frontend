@@ -7,15 +7,79 @@
 form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  width: 200px;
-  padding: 50px;
-  margin-top: 100px;
   align-items: center;
+  gap: 5px;
+  width: 200px;
+  padding: 20px;
+  margin-top: 20px;
   box-shadow: grey 0 5px 10px;
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  padding: 20px;
+  margin-top: 100px;
 }
 
 .form-container {
   display: flex;
+  align-items: center;
   justify-content: center;
+}
+
+.home-container {
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+}
+
+.posts-container {
+  margin: 100px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-container {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  margin: 0 0 20px;
+  padding: 20px;
+  width: 450px;
+  align-content: center;
+  align-items: center;
+}
+
+.subreddits-container {
+  display: flex;
+  flex-direction: column;
+  margin: 100px 0;
+  justify-content: start;
+  gap: 10px;
+  text-align: center;
+}
+/* 
+.subreddit-container {
+  border: 2px solid black;
+  padding: 10px;
+  width: 200px;
+} */
+
+.arrows {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  align-self: flex-start;
+}
+
+.up-btn,
+.down-btn {
+  font-size: 20px;
+}
+
+.post-btn {
+  margin-bottom: 20px;
 }

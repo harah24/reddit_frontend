@@ -8,7 +8,6 @@ export default function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  // console.log(username, password);
 
   const { setToken } = useOutletContext();
 
@@ -32,9 +31,8 @@ export default function Register() {
     if (!info.success) {
       return setError(info.error);
     }
-    // console.log(info);
-    // for client to be "signed in" 1. token is stored in state so set the token in state
-    //2. token is stored in local storage - localStorage.setItem needs a key ("token") and the token from the response its self available on like 35 info.token
+
+    //2. token is stored in local storage - localStorage.setItem needs a key ("token") and the token from the response its self available (info.token)
     setToken(info.token);
     localStorage.setItem("token", info.token);
     // redirect user to "/"
