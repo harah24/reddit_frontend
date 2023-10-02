@@ -3,11 +3,9 @@ import { API } from "../api";
 import { useNavigate, useOutletContext } from "react-router-dom";
 
 export default function Login() {
-  /* make controlled input by creating useState for the input  */
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  // console.log(username, password);
 
   const { setToken } = useOutletContext();
 
@@ -31,10 +29,10 @@ export default function Login() {
     if (!info.success) {
       return setError(info.error);
     }
-    // console.log(info);
+
     setToken(info.token);
     localStorage.setItem("token", info.token);
-    // redirect user to "/"
+
     navigate("/");
   }
 

@@ -10,7 +10,7 @@ export default function Subreddit() {
   );
 
   return (
-    <div>
+    <div className="filter-post">
       {subredditPosts.length > 0 ? (
         subredditPosts.map((post) => (
           <div key={post.id}>

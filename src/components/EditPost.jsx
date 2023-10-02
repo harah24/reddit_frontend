@@ -3,7 +3,7 @@ import { API } from "../api";
 import { useOutletContext, useNavigate, useParams } from "react-router-dom";
 
 export default function EditPost() {
-  const { token, fetchPosts, posts, user } = useOutletContext();
+  const { token, fetchPosts, posts } = useOutletContext();
   const { postId } = useParams();
 
   const post = posts.find((_post) => _post.id === postId);

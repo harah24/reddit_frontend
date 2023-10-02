@@ -3,7 +3,6 @@ import DeleteSubreddits from "./DeleteSubreddits";
 import DisplayPosts from "./DisplayPosts";
 
 // display subreddits and posts on the home page
-
 export default function Home() {
   const { subreddits, posts } = useOutletContext();
 
@@ -11,7 +10,6 @@ export default function Home() {
     <div className="home-container">
       <div className="posts-container">
         {/* iterate through the posts & render each post*/}
-
         {posts.map((post) => {
           if (!post.parentId) {
             return <DisplayPosts post={post} key={post.id} />;
@@ -21,7 +19,7 @@ export default function Home() {
       <div className="subreddits-container">
         <div className="create-btn">
           <Link to={"/newPosts"}>
-            <button className="post-btn">Create Post </button>
+            <button className="post-button">Create Post </button>
           </Link>
           <Link to={"/newSubreddits"}>
             <button className="subreddit-btn">Create Community</button>

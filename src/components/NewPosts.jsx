@@ -46,11 +46,10 @@ export default function NewPosts() {
   ) : (
     <div>
       <form className="post-form" onSubmit={handleSubmit}>
-        <div className="">
-          <label htmlFor="">Select Subreddit:</label>
+        <div className="form-box">
+          <label htmlFor="selectSubreddit">Select Subreddit:</label>
           <select
-            id=""
-            className=""
+            className="form-control"
             onChange={(e) => setSelectSubreddit(e.target.value)}
             value={selectSubreddit}
           >
@@ -63,28 +62,28 @@ export default function NewPosts() {
           </select>
         </div>
 
-        <div>
+        <div className="form-box">
           <input
-            className=""
+            className="input-control"
             type="text"
             onChange={(e) => setTitle(e.target.value)}
             value={title}
             placeholder="Title"
           />
         </div>
-        <div className="">
+        <div className="form-box">
           <textarea
-            className=""
+            className="textarea-control"
             onChange={(e) => setText(e.target.value)}
             value={text}
             placeholder="Text"
           />
         </div>
-        <div className="">
-          <button className="">Post</button>
+        <div className="form-box">
+          <button className="btn-submit">Post</button>
         </div>
 
-        {error && <p className="">{error}</p>}
+        {error && <p className="error-message">{error}</p>}
       </form>
     </div>
   );

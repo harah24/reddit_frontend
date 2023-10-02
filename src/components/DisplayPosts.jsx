@@ -7,7 +7,6 @@ useEffect;
 
 export default function DisplayPosts({ post }) {
   const { user } = useOutletContext();
-  console.log(post);
 
   return (
     <div className="post-container" key={post.id}>
@@ -27,15 +26,20 @@ export default function DisplayPosts({ post }) {
         )}
         <DeletePost post={post} />
         <Votes post={post} />
-        <button>
-          <FaComment />
-        </button>
       </div>
       {/* display existing child posts - map through post.children & recursively render this component for each child post */}
       <div className="child-div">
         {post.children &&
           post.children.map((child) => {
-            return <DisplayPosts post={child} key={child.id} />;
+            return (
+              <DisplayPosts
+                post={child}
+                key={child.id}
+                text={child.text}
+                children={child.children}
+                username={child.username}
+              />
+            );
           })}
       </div>
     </div>

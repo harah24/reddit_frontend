@@ -3,8 +3,6 @@ import { API } from "../api";
 import { useNavigate, useOutletContext } from "react-router-dom";
 
 export default function Register() {
-  /* make controlled input by creating useState for the input  */
-  // we want to record what the user types in so we need to create some state to be able to do that
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -32,10 +30,9 @@ export default function Register() {
       return setError(info.error);
     }
 
-    //2. token is stored in local storage - localStorage.setItem needs a key ("token") and the token from the response its self available (info.token)
     setToken(info.token);
     localStorage.setItem("token", info.token);
-    // redirect user to "/"
+
     navigate("/");
   }
 

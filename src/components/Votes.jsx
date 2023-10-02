@@ -15,7 +15,7 @@ export default function Votes({ post }) {
     fetchPosts();
     const info = await res.json();
     if (!info.success) {
-      deleteUpVote();
+      delUpVote();
     }
   }
 
@@ -29,7 +29,7 @@ export default function Votes({ post }) {
     fetchPosts();
     const info = await res.json();
     if (!info.success) {
-      deleteDownVote();
+      delDownVote();
     }
   }
 
@@ -41,7 +41,6 @@ export default function Votes({ post }) {
       },
     });
     fetchPosts();
-    const info = await res.json();
   }
 
   async function delDownVote() {
@@ -52,7 +51,6 @@ export default function Votes({ post }) {
       },
     });
     fetchPosts();
-    const info = await res.json();
   }
 
   return !token ? (

@@ -37,19 +37,20 @@ export default function NewSubreddits() {
   return !token ? (
     <h2>Please login to create a community</h2>
   ) : (
-    <div>
-      <form className="" onSubmit={handleSubmit}>
-        <div className="">
+    <div className="subreddit">
+      <form className="subreddit-form" onSubmit={handleSubmit}>
+        <div className="form-box">
           <label htmlFor="">Subreddit Name</label>
           <input
+            className="subreddit-input"
             type="text"
             onChange={(e) => setName(e.target.value)}
             value={name}
             placeholder="Create Subreddit"
           />
         </div>
-        <div>
-          <button>Post</button>
+        <div className="form-group">
+          <button className="post-btn">Post</button>
         </div>
         {error && <p className="">{error}</p>}
       </form>
