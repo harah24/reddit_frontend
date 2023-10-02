@@ -1,3 +1,4 @@
+import { FaReddit } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export default function Navbar({ user, setToken, setUser }) {
@@ -11,21 +12,31 @@ export default function Navbar({ user, setToken, setUser }) {
 
   return (
     <div className="navbar-container">
-      <Link to={"/"}>Home</Link>
+      <div className="logo">
+        <FaReddit className="reddit" />
+        <p className="reddit-word">reddit</p>
+      </div>
+      <Link className="link" to={"/"}>
+        Home
+      </Link>
       {/* <Link to={"/newSubreddits"}>New Subreddits</Link>
       <Link to={"/newPosts"}>New Posts</Link> */}
       {/* <Link to={"/editPosts/:postId"}>Edit Post</Link> */}
       {/* <Link to={"/subreddit"}>Subreddit</Link> */}
       {!user.id && (
         <>
-          <Link to={"/login"}>Login</Link>
-          <Link to={"/register"}>Register</Link>
+          <Link className="link" to={"/login"}>
+            Login
+          </Link>
+          <Link className="link" to={"/register"}>
+            Register
+          </Link>
         </>
       )}
       {user.id && (
         <>
-          <span>Welcome {user.username}</span>
-          <Link onClick={handleLogout} to={"/"}>
+          <span className="link">Welcome {user.username}</span>
+          <Link className="link" onClick={handleLogout} to={"/"}>
             Logout
           </Link>
         </>

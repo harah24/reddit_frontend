@@ -5,14 +5,11 @@ import { API } from "./api";
 
 export default function App() {
   const [subreddits, setSubreddits] = useState([]);
-
   const [token, setToken] = useState("");
-
   const [user, setUser] = useState({});
-
   const [posts, setPosts] = useState([]);
 
-  // fetchUser
+  // fetch user info
   async function fetchUser() {
     const localToken = localStorage.getItem("token");
 
@@ -36,7 +33,7 @@ export default function App() {
     }
   }
 
-  // fetchSubreddits
+  // fetch all subreddits
   async function fetchSubreddits() {
     const res = await fetch(`${API}/subreddits`);
 
@@ -47,7 +44,7 @@ export default function App() {
     }
   }
 
-  //fetchPosts
+  //fetch all the posts
   async function fetchPosts() {
     const res = await fetch(`${API}/posts`);
 
@@ -75,6 +72,7 @@ export default function App() {
           token,
           posts,
           fetchPosts,
+          user,
         }}
       />
     </div>

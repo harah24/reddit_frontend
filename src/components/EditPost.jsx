@@ -3,16 +3,13 @@ import { API } from "../api";
 import { useOutletContext, useNavigate, useParams } from "react-router-dom";
 
 export default function EditPost() {
-  const { token, fetchPosts, posts } = useOutletContext();
+  const { token, fetchPosts, posts, user } = useOutletContext();
   const { postId } = useParams();
 
   const post = posts.find((_post) => _post.id === postId);
 
-  // console.log(post);
-
-  // new states for setTitle, setText, setError,
-  const [title, setTitle] = useState("");
-  const [text, setText] = useState("");
+  const [title, setTitle] = useState(post.title);
+  const [text, setText] = useState(post.text);
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
@@ -33,17 +30,17 @@ export default function EditPost() {
     });
     const info = await res.json();
 
-    console.log(info);
     if (!info.success) {
       return setError(info.error);
     }
-    setText("");
-    setTitle("");
+
     fetchPosts();
     navigate("/");
   }
 
-  return (
+  return !token ? (
+    <h2> Please login to edit posts.</h2>
+  ) : (
     <div>
       <form className="post-form" onSubmit={handleEditPost}>
         <div>
@@ -64,7 +61,7 @@ export default function EditPost() {
           />
         </div>
         <div className="">
-          <button>update post</button>
+          <button> Update Post</button>
         </div>
 
         {error && <p className="">{error}</p>}

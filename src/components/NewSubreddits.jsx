@@ -34,7 +34,9 @@ export default function NewSubreddits() {
     navigate("/");
   }
 
-  return (
+  return !token ? (
+    <h2>Please login to create a community</h2>
+  ) : (
     <div>
       <form className="" onSubmit={handleSubmit}>
         <div className="">

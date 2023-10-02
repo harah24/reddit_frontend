@@ -1,16 +1,14 @@
 import { useOutletContext, useParams } from "react-router-dom";
 
 export default function Subreddit() {
-  const { subreddits, posts, fetchPosts, token, user } = useOutletContext();
-
-  console.log(posts);
+  const { posts } = useOutletContext();
 
   const { subredditId } = useParams();
 
   const subredditPosts = posts.filter(
     (_post) => _post.subredditId === subredditId
   );
-  console.log(subredditPosts);
+
   return (
     <div>
       {subredditPosts.length > 0 ? (

@@ -41,7 +41,9 @@ export default function NewPosts() {
     fetchSubreddits();
     navigate("/");
   }
-  return (
+  return !token ? (
+    <h2>Please login to post</h2>
+  ) : (
     <div>
       <form className="post-form" onSubmit={handleSubmit}>
         <div className="">
